@@ -51,12 +51,13 @@ const MenuHeader21 = props => {
 
 
 
-const SubMenu1  = () => {
+const SubMenu3  = () => {
 
   return (
   
     <div
       sx={{
+        width: "100%",
         display: 'grid',
         gridGap: 3,
         gridTemplateColumns: `repeat(auto-fit, minmax(64px, 1fr))`,
@@ -85,7 +86,7 @@ const SubMenu1  = () => {
       <Link sx={Estilo.menu1}
         to='/orders'
       >
-        Mis Pedidos
+        Mis Causas
       </Link>
     
     </div>
@@ -175,8 +176,10 @@ const SubMenu0  = () => {
 
 const SubMenuArmar  = (MenuSelected, onMenu) => {
 
-  if (MenuSelected===1 & onMenu) {return SubMenu1()}
-  if (MenuSelected===2 & onMenu) {return SubMenu2()}
+  // if (MenuSelected===1 & onMenu) {return SubMenu1()}
+  // if (MenuSelected===2 & onMenu) {return SubMenu2()}
+  if (MenuSelected===3 & onMenu) {return SubMenu3()}
+
   return SubMenu0()
 }
 
@@ -239,35 +242,35 @@ const Body = props => {
     >
 
       <Link sx={Estilo.menu1}
-        to='/' 
+        to='/somos' 
+        href='/somos'
         onMouseOver={() => { setMenuSelected(1)}}
       >
-        Cuenta
+        Quienes Somos
       </Link>
 
       <Link sx={Estilo.menu1}
-        to='/' 
+        to='/causas' 
+        href='/causas'
         onMouseOver={() => { setMenuSelected(2)}}
        >
-        Pedidos
+        Causas
       </Link>
     
       <Link2 sx={Estilo.menu1}
-        href='/togo'
-        target='_blank'
+        to='/causas' 
         onMouseOver={() => { setMenuSelected(3)}}
        >
-        Entregas
+        Mi Cuenta
       </Link2>
     
 
 
       <Link2 sx={Estilo.menu1}
-        href='/dash'
-        target='_blank'
-        onMouseOver={() => { setMenuSelected(3)}}
+        href='/contacto'
+        onMouseOver={() => { setMenuSelected(4)}}
        >
-        Reportes
+        Contacto
       </Link2>
 
     </div>

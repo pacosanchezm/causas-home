@@ -21,7 +21,7 @@ import axios from "axios"
   import Head from "./head"
   import UsedataHome from "./usedata"
 
-  import Menu from "./eai_menu/menu"
+  import Menu from "./smx_menu/menu"
 
 
   import SideBar from "./sidebar";
@@ -38,7 +38,7 @@ import axios from "axios"
 // -----------------------------------------------------------------------------
 // ---------------
 
-  let server = "https://sushifactory.app"
+  let server = "https://somoscausas.com"
 
 
 
@@ -71,7 +71,7 @@ const useStateUniv = () => {
     },
 
     Images: {
-      Logo1: useState(useContext(createContext({src: "https://smxai.net/sf/sflogo1.jpg"}))),
+      Logo1: useState(useContext(createContext({src: "https://smxai.net/somoscausas/somoscausashead.png"}))),
       Logo2: useState(useContext(createContext({src: "https://smxai.net/sf/sflogo2.jpg"}))),
       Flechad: useState(useContext(createContext({src: "https://smxai.net/sf/cs1/arrowd1.png"}))),
       Flechau: useState(useContext(createContext({src: "https://smxai.net/sf/cs1/arrowu1.png"}))),
@@ -222,14 +222,6 @@ const HeaderBody = props => {
 // -----------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
 const Body = props => {
   const [Loading, setLoading] = useContext(StateContext).LoadingSecc1
 
@@ -312,7 +304,46 @@ try {
 
 
 
+// -----------------------------------------------------------------------------
 
+
+const Pie = props => {
+  const Estilo = useThemeUI().theme.styles;
+  // const { getRegistros, getDetalle } = useData();
+
+  const useacciones = new useAcciones(StateContext)
+
+  try {
+    return (
+      <div>
+        <Flex
+        
+          sx={{
+            p: 1,
+            bg: "gray",
+            fontWeight: "normal",
+            fontSize: 3,
+            color: "#FFFFFF",
+            fontFamily: "body",
+            width: "100%"
+          }}
+        >
+
+        </Flex>
+
+        <Flex>
+          <Box sx={{ width: "100%" }}>
+            <Text sx={Estilo.h3}>
+              2021 SomosMexico.com
+            </Text>
+          </Box>
+        </Flex>
+      </div>
+    );
+  } catch (e) {
+    console.error(e);
+  }
+};
 
 
 
@@ -363,7 +394,6 @@ export default (App = props => {
 
                           <MenuBody {...props} />
 
-
                         </div>                 
                       : <div/>
                     }
@@ -379,6 +409,38 @@ export default (App = props => {
                     <Body {...props} />
 
                   </main>
+
+
+                  <footer sx={{width: "100%"}}>
+                    <div
+                      sx={{
+                        display: "block",
+                        padding: "10px",
+                        paddingLeft: "10px",
+                        height: "40px",
+                        width: "100%"
+                      }}
+                    />
+
+                    <div
+                      style={{
+                        backgroundColor: "gray",
+                        fontSize: "20px",
+                        color: "white",
+                        borderTop: "1px solid #E7E7E7",
+                        textAlign: "left",
+                        paddingLeft: "20px",
+                        position: "fixed",
+                        left: "0",
+                        bottom: "0",
+                        height: "50px",
+                        width: "100%"
+                      }}
+                    >
+                      <Pie {...props} />
+                    </div>
+                  </footer>
+
 
                 </Flex>
 

@@ -56,7 +56,7 @@ const Body = props => {
         <Flex bg="WhiteSmoke" sx={{width: "100%" }}>
 
           <Box >
-            <Image  src={Images.Logo1[0].src} />
+            <Image  src={Images.Logo1[0].src} sx={{ height: "34px", width: "300px" }}/>
           </Box>
 
 
